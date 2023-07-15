@@ -2,6 +2,8 @@ let active = 3;
 
 const mndots = document.querySelectorAll(".mndot");
 const stripe = document.querySelectorAll(".second");
+const links = document.querySelectorAll(".second a");
+const images = document.querySelectorAll("#image-container img");
 
 mndots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
@@ -23,6 +25,15 @@ mndots.forEach((dot, index) => {
             opacity: 1,
         });
         
+        
+        gsap.to(links[index], {
+            pointerEvents: "visible",
+        });
+        
+        gsap.to(images[index], {
+            opacity: 1,
+            duration: .5
+        });
 
     });
 });
@@ -38,6 +49,15 @@ function dim() {
         opacity: .2,
         duration: .5
     });
+
+    gsap.to(links, {
+        pointerEvents: "none",
+    });
+
+    gsap.to(images, {
+        opacity: 0,
+        duration: 0
+    });
 }
 
 
@@ -47,6 +67,14 @@ gsap.to(mndots[active-1], {
 });
 
 gsap.to(stripe[active-1], {
+    opacity: 1,
+});
+
+gsap.to(links[active-1], {
+    pointerEvents: "visible",
+})
+
+gsap.to(images[active-1], {
     opacity: 1,
 });
 
