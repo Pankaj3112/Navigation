@@ -132,6 +132,15 @@ a{
     cursor: pointer;
 }
 
+#click{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translate(0, -50%) rotate(90deg);
+    font-size: 1.1rem;
+    color: #a7a7a7;
+}
+
 #image-container{
     position: relative;
     width: 350px;
