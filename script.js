@@ -84,3 +84,19 @@ gsap.to('#circle', {
     ease: Expo.easeInOut,
     duration: 2
 })
+
+document.querySelector('#switch').addEventListener('click', () => {
+
+    document.querySelector('#inner').classList.toggle('active');
+    document.querySelector('#moon').classList.toggle('dp-blo');
+    document.querySelector('#container').classList.toggle('bg-dark');
+
+    document.querySelectorAll('.second a').forEach(ele => {
+        ele.classList.toggle('text-white');
+    });
+
+    document.querySelectorAll('.mndot').forEach(ele => {
+        ele.classList.toggle('bg-white');
+    });
+});
+
